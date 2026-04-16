@@ -25,10 +25,6 @@ Liquibase
 
 Maven
 
-**Others**
-
-Lombok, Mapstruct, Spring Data JPA
-
 ----------
 
 ##  Getting Started
@@ -112,82 +108,27 @@ INSERT INTO product_attributes (attribute_key, attribute_value, product_id) VALU
 
 ## API Endpoints
 
-### 1. Get All Products
+## Products
 
-`GET http://localhost:8080/api/products`
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | /api/products | Get all products (pageable, filterable) |
+| POST | /api/products | Create a new product |
+| PUT | /api/products/{id} | Update a product |
+| DELETE | /api/products/{id} | Delete a product |
 
-Retrieves a paginated and filterable list of products.
+### Filtering & Pagination
+GET /api/products?name=samsung&priceFrom=1000&priceTo=5000&producerId=1&page=0&size=10&sort=price,desc
 
-**Query Examples:**
+## Producers
 
--   **Basic Pagination:** `?page=0&size=10`
-
--   **By Name:** `?name=samsung`
-
--   **Price Range:** `?priceFrom=1000&priceTo=5000`
-
--   **Combined with Sort:** `?name=samsung&priceFrom=1000&sort=price,desc`
-
-
-----------
-
-### 2. Create Product
-
-`POST http://localhost:8080/api/products`
-
-Adds a new product to the catalog.
-
-**Request Body:**
-
-JSON
-
-```
-{
-  "name": "Samsung Galaxy S25",
-  "price": 4999.2,
-  "producerId": 1,
-  "attributes": [
-    {
-      "attributeKey": "color",
-      "attributeValue": "Titanium Gray"
-    }
-  ]
-}
-
-```
-
-----------
-
-### 3. Update Product
-
-`PUT http://localhost:8080/api/products/{id}`
-
-Updates existing product details.
-
-**Request Body:**
-
-JSON
-
-```
-{
-  "name": "Samsung Galaxy S24 Ultra",
-  "price": 4999.99,
-  "producerId": 1,
-  "attributes": [
-    { "attributeKey": "color", "attributeValue": "Titanium Black" },
-    { "attributeKey": "storage", "attributeValue": "512GB" }
-  ]
-}
-
-```
-
-----------
-
-### 4. Delete Product
-
-`DELETE http://localhost:8080/api/products/{id}`
-
-Removes a specific product from the database.
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | /api/producers | Get all producers (pageable) |
+| GET | /api/producers/{id} | Get producer by ID |
+| POST | /api/producers | Create a new producer |
+| PUT | /api/producers/{id} | Update a producer |
+| DELETE | /api/producers/{id} | Delete a producer |
 
 
 
