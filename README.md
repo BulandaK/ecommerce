@@ -25,6 +25,10 @@ Liquibase
 
 Maven
 
+**Others**
+
+Lombok, Mapstruct, Spring Data JPA
+
 ----------
 
 ##  Getting Started
