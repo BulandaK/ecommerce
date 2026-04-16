@@ -59,7 +59,7 @@ The project uses an **H2 In-Memory Database** for easy development and testing.
 -   **URL:** `http://localhost:8080/h2-console`
 
 -   **Credentials:** As shown in the image below. (or you can check in application.properties)
-    [h2 credentials](image-2.png)
+    ![h2 credentials](image-2.png)
 
 ### Dummy Data
 
